@@ -4,7 +4,7 @@ import os
 
 NEWLINE = "\n"
 MD_NEWLINE_SYMBOL = "\\"
-STUDENT_NAME = "Parker Rogers"
+STUDENT_NAME = "Student Name"
 CLASS = "ECEN 424"
 TITLE = "# "
 HEADING = "### "
