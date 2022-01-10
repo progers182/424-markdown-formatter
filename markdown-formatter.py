@@ -87,7 +87,7 @@ if __name__ == "__main__":
         f.write(NEWLINE)
 
     # loop through all files in HW dir and add to md file
-    for file in os.listdir(directory):
+    for file in sorted(os.listdir(directory)):
         file_tuple = os.path.splitext(file)
         path = os.path.join(directory, file)
         with open(markdown_file, "a") as f:
