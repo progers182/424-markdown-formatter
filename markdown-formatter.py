@@ -87,7 +87,7 @@ if __name__ == "__main__":
         f.write(NEWLINE)
 
     # loop through all files in HW dir and add to md file
-    for file in sorted(os.listdir(directory)):
+    for file in os.listdir(directory):
         file_tuple = os.path.splitext(file)
         path = os.path.join(directory, file)
         with open(markdown_file, "a") as f:
@@ -100,7 +100,8 @@ if __name__ == "__main__":
                 f.write(CODE_SNIPPET + NEWLINE)
                 # compile c program
                 print (f"compiling {file}...")
-                out_file = os.path.join(directory, "a") # output location
+                executable = ".exe" if os.name == "nt" else ".out"
+                out_file = os.path.join(directory, "a" + executable) # output location
                 p = subprocess.Popen(["gcc", path, "-o", out_file])
                 p.wait()
                 # execute c program
